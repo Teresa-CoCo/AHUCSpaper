@@ -198,6 +198,6 @@ int main(void)
     printf("\n");
     jibaoguo();
     printf("\n");
-    
+
 
 }
