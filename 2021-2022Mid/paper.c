@@ -135,6 +135,53 @@ void parttwoquetwo()
 }
 
 //程序设计题
+//1.题干见word
+
+void jibaoguo()
+{
+    int chang,kuan,gao,zhongliang,money;
+    printf("请输入包裹的长宽高尺寸(长 宽 高 （单位为cm）)\n");
+    scanf("%d %d %d",&chang,&kuan,&gao);
+    if (chang >100 || kuan >100 || gao >100)
+    {
+        printf("不予邮寄，原因：超过1米尺寸限制\n");
+    }
+    else
+    {
+        printf("请输入包裹的重量（单位为kg）\n");
+        scanf("%d",&zhongliang);
+        if (zhongliang>30)
+        {
+            printf("重量不符合标准，不予邮寄\n");
+        }
+        else
+        {
+            if (zhongliang<10)
+            {
+                money= 1 + zhongliang * 0.8;
+
+                
+            }
+            else if (zhongliang>=10 && zhongliang <20)
+            {
+                money=1+zhongliang*0.75;
+            }
+            else if (zhongliang>=20 && zhongliang <30)
+            {
+                money = 1+zhongliang*0.7;
+            }
+            printf("经计算，所需邮费为：%2d",money);
+            return 0;
+            
+            
+            
+
+        }
+        
+    }
+    
+
+}
 
 int main(void)
 {
@@ -148,5 +195,9 @@ int main(void)
     parttwoqueone();
     printf("\n");
     parttwoquetwo();
+    printf("\n");
+    jibaoguo();
+    printf("\n");
+    
 
 }
