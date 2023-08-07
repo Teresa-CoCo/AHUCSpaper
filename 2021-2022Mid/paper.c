@@ -44,35 +44,108 @@ void partonequetwo()
     
     
 }
-//解释不全
+//3.
 void partonequethree()
 {
     int c;
-    while ((c=getchar())!='\n')\\循环检测当输入为回车结束检测
+    while ((c=getchar())!='\n')//循环检测当输入为回车结束检测
     {
         switch (c-'a')//c（变量）的ASCII-a的ASCII
         {
         case 0://跳过（不输出）
         case 1:putchar(c+1);//差一位：输出下一个字母
-        case 2:putchar(c+2);break;//差两位：输出下下个字母
+        case 2:putchar(c+2);break;//差两位：输出下下个字母，跳出循环
         default:putchar(c+3);//其他情况：输出下下下个字母
             break;//跳出循环
         }
     }
     
-}//假设输入为abd3《回车》
-//第一步：a，差0，case 0：跳过
-// 第二步：b，差1，输出c
-// 第三步：d，差3，输出g
+}
+//要点：如果 case 语句块中没有 break 语句时，匹配成功后，从当前 case 开始，后续所有 case 的值都会输出。
+//假设输入为abd3《回车》
+//第一步：a，差0，case 0：无break，case 1：输出b 无break case2：输出c，有break（bc）
+// 第二步：b，case1，差1，输出c，无break，case2，输出d，break（cd）
+// 第三步：d，差3，输出g，有break（d）
+//第四步：3 ，差好多，case 2，加3，3+3=6，输出6，有break
 
 
+//4.
+void partonequefour()
+{
+    int i,j,n=1;//初始化变量
+    for ( i = 1; i <= 4; i++)//循环3次
+    {
+        for ( j = 1; j <= 4; j++,n++)//循环3次
+        {
+            if (i==3 && j==1)//永远不会成立
+            {
+                break;
+            }
+            printf("%d\t",i*j);//打印i×g
+            if (n%4==0)//如果n/4能除开
+            {
+                printf("\n");//换行
+            }
+            
+            
+        }
+        
+    }
+    //return 0;
+}
 
+//Part 2.程序分析题
+//1.求1，2，3...20的阶乘
 
+void parttwoqueone()
+{
+    double s=0,t=1;
+    int n;
+    for ( n = 1; n <21 ; n++)
+    {
+        t =t*n;
+        //填写
+        s=s+t;//将结果累加进s
+
+        //填写
+    }
+    printf("%e",s);
+    //return 0;
+    
+
+}
+//2.求回文数
+void parttwoquetwo()
+{
+    int g,s,q,w,x;
+    scanf("%d",&x);
+    w=x/10000;
+    q=(x%10000)/1000;
+    s=(x%100)/10;
+    g=x%10;
+    if (g==w || s==q)
+    {
+        printf("这个数字是回文数");
+    }
+    else
+    {
+        printf("这个数字不是回文数");
+    }
+    
+}
+
+//程序设计题
 
 int main(void)
 {
     partonequeone();
     partonequetwo();
     partonequethree();
+    printf("\n");
+    partonequefour();
+    printf("\n");
+    parttwoqueone();
+    printf("\n");
+    parttwoquetwo();
 
 }
