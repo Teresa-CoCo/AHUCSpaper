@@ -1,7 +1,7 @@
 # AHUCSpaper
 A repository where save papers from AHU.(All paper search from internet.)
 
-所有题目搜集于互联网，感谢https://github.com/TenMoons/AHU-CS-Repository仓库的往年题目整理。
+所有题目搜集于互联网，感谢https://github.com/TenMoons/AHU-CS-Repository     仓库的往年题目整理。
 
 本仓库为私人练习库，有错误欢迎issue。
 
