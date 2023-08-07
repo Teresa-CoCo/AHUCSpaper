@@ -138,6 +138,7 @@ void parttwoquetwo()
 
 int main(void)
 {
+    SetConsoleOutputCP(65001);
     partonequeone();
     partonequetwo();
     partonequethree();
