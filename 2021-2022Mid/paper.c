@@ -171,7 +171,7 @@ void jibaoguo()
                 money = 1+zhongliang*0.7;
             }
             printf("经计算，所需邮费为：%2d",money);
-            return 0;
+            //return 0;
             
             
             
