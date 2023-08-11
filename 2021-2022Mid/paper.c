@@ -183,6 +183,136 @@ void jibaoguo()
 
 }
 
+//2.求200以内素数(根据之前personal项目改编,可能功能冗余了)
+
+int isPrime(int num) {
+    if (num <= 1) {
+        return 0;  // 不是素数
+    }
+
+    for (int i = 2; i * i <= num; ++i) {
+        if (num % i == 0) {
+            return 0;  // 不是素数
+        }
+    }
+
+    return 1;  // 是素数
+}
+
+void sushu()
+{
+    int num = 0;
+    //printf("请输入一个整数");
+    //
+    //scanf("%d",&num);
+    //int num = 0;
+    int i=0;
+    for ( i = 0; i < 200; i++)
+    {
+        num++;
+        if (isPrime(num))
+        {
+            printf("%d\n",num);
+        }
+    }
+    
+    
+    
+    
+
+}
+
+//3.统计各分数段人数
+void tongji()
+{
+    int chengji;
+    int i=0;
+    int one=0;
+    int two=0;
+    int three=0;
+    int four=0;
+    int five=0;
+    for ( i = 0; i < 50; i++)
+    {
+        printf("请输入第%d个数据",i);
+        scanf("%d",&chengji);
+        switch (chengji)
+        {
+        case 90 ... 100:
+            one++;
+            break;
+        case 80 ... 89:
+            two++;
+            break;
+        case 70 ... 79:    
+            three++;
+            break;
+        case 60 ... 69:    
+            four++;
+            break;
+        case 0 ... 59:
+            five++;
+            break;
+        
+        default:
+            printf("您输入的有错误。\n");
+            break;
+        }  
+        printf("当前90分以上%d人，80-89%d人，70-79%d人，60-69%d人，低于60分%d人\n",one,two,three,four,five);
+    }
+    
+}
+
+//4.统计大小写英文字母，空格，数字，其他字符的数量
+
+
+void amount()
+{
+    char input[114];
+    int daxie=0;
+    int xiaoxie=0;
+    int kongge=0;
+    int shuzi=0;
+    int qita=0;
+
+
+    printf("请输入一行字符\n");
+    fgets(input,sizeof(input),stdin);
+    for (int i = 0; input[i] != '\0'; i++)
+    {
+        if (input[i] >='A' && input[i] <= 'Z')
+        {
+            daxie++;
+        }
+        else if (input[i] >='a' && input[i] <='z')
+        {
+            xiaoxie++;
+        }
+        else if (input[i] ==' ')
+        {
+            kongge++;
+        }
+        else if (input[i] >='0' && input[i] <= '9')
+        {
+            shuzi++;
+        }
+        else
+        {
+            qita++;
+        }
+        
+        
+        
+        
+    }
+    printf("经统计，有大写字母%d，小写字母%d个，数字%d个，空格%d个，其他字符%d个",daxie,xiaoxie,shuzi,kongge,qita);
+
+    
+
+    
+}
+
+
 int main(void)
 {
     SetConsoleOutputCP(65001);
@@ -198,6 +328,15 @@ int main(void)
     printf("\n");
     jibaoguo();
     printf("\n");
+    sushu();
+    printf("\n");
+    tongji();
+    printf("\n");
+    fflush(stdin);//确保缓冲区无空格导致出错，若分开运行无需此行
+    amount();
+    printf("21-22期中试卷全部结束！");
+    Sleep(300);
+
 
 
 }
