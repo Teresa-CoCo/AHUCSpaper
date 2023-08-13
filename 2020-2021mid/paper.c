@@ -201,7 +201,7 @@ void shulie()
     fenmu[0] = 1.0;
     fenzi[0] = 2.0;
 
-    for (i = 0; i <= 20; i++)
+    for (i = 0; i < 20; i++)
     {
         fenmu[i + 1] = fenzi[i];
         fenzi[i + 1] = fenmu[i] + fenzi[i];
@@ -216,7 +216,7 @@ void shulie()
 
     printf("%.2lf\n", sum);
 }
-//34.28
+//32.66
 //4.第二种解法
 
 void calculateSum()
